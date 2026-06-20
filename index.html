@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حمیدرضا محمدی | Full-Stack Web Developer</title>
+  <meta name="description"
+    content="حمیدرضا محمدی — Full-Stack Web Developer. طراحی و توسعه وب‌اپلیکیشن‌های مدرن با React، Next.js، Node.js و TypeScript" />
+  <meta name="keywords"
+    content="حمیدرضا محمدی, Full-Stack Developer, React, Next.js, Node.js, TypeScript, طراحی سایت" />
+  <meta name="author" content="Hamidreza Mohammadi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://hamidreza.dev/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hamidreza.dev/" />
+  <meta property="og:title" content="حمیدرضا محمدی | Full-Stack Web Developer" />
+  <meta property="og:description" content="طراحی و توسعه وب‌اپلیکیشن‌های مدرن از فرانت‌اند تا بک‌اند" />
+  <meta property="og:image" content="https://hamidreza.dev/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fa_IR" />
+  <meta property="og:site_name" content="حمیدرضا محمدی" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="حمیدرضا محمدی | Full-Stack Developer" />
+  <meta name="twitter:description" content="طراحی و توسعه وب‌اپلیکیشن‌های مدرن" />
+  <meta name="twitter:image" content="https://hamidreza.dev/og-image.jpg" />
+
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Schema.org Person + WebSite -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://hamidreza.dev/#person",
+      "name": "Hamidreza Mohammadi",
+      "alternateName": "حمیدرضا محمدی",
+      "url": "https://hamidreza.dev",
+      "email": "info@hamidreza.dev",
+      "telephone": "+989300208711",
+      "jobTitle": "Full-Stack Web Developer",
+      "description": "طراحی و توسعه وب‌اپلیکیشن‌های مدرن از فرانت‌اند تا بک‌اند",
+      "knowsAbout": ["React","Next.js","Node.js","TypeScript","PostgreSQL","Docker"],
+      "sameAs": [
+        "https://github.com/hamidreza",
+        "https://linkedin.com/in/hamidreza",
+        "https://t.me/hamidreza"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hamidreza.dev/#website",
+      "url": "https://hamidreza.dev",
+      "name": "حمیدرضا محمدی | Full-Stack Developer",
+      "description": "پورتفولیو شخصی حمیدرضا محمدی",
+      "author": {"@id": "https://hamidreza.dev/#person"},
+      "inLanguage": "fa"
+    }
+  ]
+}
+</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="sp"></div>
+
+  <!-- PRELOADER -->
+  <div id="pl">
+    <div class="pl-orb" id="pl-orb"></div>
+    <div class="pl-logo">HM</div>
+    <div class="pl-track">
+      <div class="pl-fill"></div>
+    </div>
+    <div class="pl-pct" id="pl-pct">0%</div>
+  </div>
+
+  <!-- CURSOR -->
+  <div id="cd"></div>
+  <div id="cr"></div>
+
+  <!-- ANIMATED BG -->
+  <div class="bg-wrap">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+  <div class="grid-bg"></div>
+
+  <!-- MOBILE MENU -->
+  <div id="mm">
+    <a href="#hero">خانه</a>
+    <a href="#skills">مهارت‌ها</a>
+    <a href="#exp">سابقه</a>
+    <a href="#portfolio">پروژه‌ها</a>
+    <a href="#services">خدمات</a>
+    <a href="#contact">تماس</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">HM</a>
+    <ul class="nl">
+      <li><a href="#hero" class="nla">خانه</a></li>
+      <li><a href="#skills" class="nla">مهارت‌ها</a></li>
+      <li><a href="#exp" class="nla">سابقه</a></li>
+      <li><a href="#portfolio" class="nla">پروژه‌ها</a></li>
+      <li><a href="#services" class="nla">خدمات</a></li>
+      <li><a href="#contact" class="nla">تماس</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="tb" id="tb" title="تغییر تم"><i class="fas fa-moon" id="ti"></i></button>
+      <button class="hb" id="hb" aria-label="منو"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ══════ HERO ══════ -->
+  <section id="hero">
+    <span class="floater" style="top:12%;right:5%;--ft:9s;--fx:-30px;--fy:20px;--fr:-20deg">⚡</span>
+    <span class="floater" style="top:60%;left:3%;--ft:11s;--fx:25px;--fy:-25px;--fr:25deg">🔷</span>
+    <span class="floater" style="bottom:20%;right:8%;--ft:7s;--fx:-15px;--fy:18px;--fr:10deg">∞</span>
+    <div class="ctr">
+      <div class="hero-in">
+        <div>
+          <div class="h-av rv"><span class="hdot"></span>آماده همکاری</div>
+          <h1 class="hname rv d1">
+            <span class="hne">Hamidreza Mohammadi</span>
+            <span>حمیدرضا محمدی</span>
+          </h1>
+          <div class="htw rv d2"><span id="tw"></span><span class="twc"></span></div>
+          <p class="hdesc rv d2">
+            طراحی و توسعه وب‌اپلیکیشن‌های مدرن، سریع و زیبا. از رابط کاربری جذاب تا بک‌اند قوی — همه چیز در یک جا.
+          </p>
+          <div class="hcta rv d3">
+            <div class="mag"><a href="#portfolio" class="btnp">نمونه‌کارها</a></div>
+            <div class="mag"><a href="#contact" class="btno">تماس با من</a></div>
+            <div class="mag">
+              <a href="cv-hamidreza-mohammadi.pdf" download class="btncv" title="دانلود رزومه">
+                <i class="fas fa-file-arrow-down"></i> رزومه
+              </a>
+            </div>
+          </div>
+          <div class="hstats rv d4">
+            <div><span class="stn" data-t="10">0+</span><span class="stl">پروژه موفق</span></div>
+            <div><span class="stn" data-t="4">0+</span><span class="stl">سال تجربه</span></div>
+            <div><span class="stn" data-t="8">0+</span><span class="stl">مشتری راضی</span></div>
+          </div>
+        </div>
+        <div class="hcv">
+          <div class="cvglow"></div>
+          <canvas id="hc"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="sind">
+      <div class="smouse">
+        <div class="swh"></div>
+      </div><span>اسکرول</span>
+    </div>
+  </section>
+
+  <!-- ══════ SKILLS ══════ -->
+  <section id="skills">
+    <span class="floater" style="top:8%;left:2%;--ft:12s;--fx:20px;--fy:15px">⚛</span>
+    <span class="floater" style="bottom:10%;right:3%;--ft:9s;--fx:-20px;--fy:-20px">🗄️</span>
+    <div class="ctr">
+      <div class="sk-hd">
+        <div class="badge rv"><i class="fas fa-code"></i> مهارت‌ها</div>
+        <h2 class="sh rv d1">چیزی که <span>بلدم</span></h2>
+        <p class="ss rv d2">سال‌ها تجربه با جدیدترین تکنولوژی‌های فرانت‌اند و بک‌اند</p>
+      </div>
+      <div class="skg">
+        <div class="skc rv">
+          <div class="ski">⚛️</div>
+          <div class="sk-info">
+            <div class="skn">React / Next.js</div>
+            <div class="sktrack">
+              <div class="skbar" data-w="95"></div>
+            </div>
+            <div class="skpct">95%</div>
+          </div>
+        </div>
+        <div class="skc rv d1">
+          <div class="ski">🟦</div>
+          <div class="sk-info">
+            <div class="skn">TypeScript</div>
+            <div class="sktrack">
+              <div class="skbar" data-w="90"></div>
+            </div>
+            <div class="skpct">90%</div>
+          </div>
+        </div>
+        <div class="skc rv d2">
+          <div class="ski">🟢</div>
+          <div class="sk-info">
+            <div class="skn">Node.js / Express</div>
+            <div class="sktrack">
+              <div class="skbar" data-w="88"></div>
+            </div>
+            <div class="skpct">88%</div>
+          </div>
+        </div>
+        <div class="skc rv d1">
+          <div class="ski">🐍</div>
+          <div class="sk-info">
+            <div class="skn">Python / Django</div>
+            <div class="sktrack">
+              <div class="skbar" data-w="80"></div>
+            </div>
+            <div class="skpct">80%</div>
+          </div>
+        </div>
+        <div class="skc rv d2">
+          <div class="ski">🗄️</div>
+          <div class="sk-info">
+            <div class="skn">PostgreSQL / MongoDB</div>
+            <div class="sktrack">
+              <div class="skbar" data-w="85"></div>
+            </div>
+            <div class="skpct">85%</div>
+          </div>
+        </div>
+        <div class="skc rv d3">
+          <div class="ski">🐳</div>
+          <div class="sk-info">
+            <div class="skn">Docker / DevOps</div>
+            <div class="sktrack">
+              <div class="skbar" data-w="75"></div>
+            </div>
+            <div class="skpct">75%</div>
+          </div>
+        </div>
+      </div>
+      <div class="sk-tags rv">
+        <span class="skt">Tailwind CSS</span><span class="skt">GraphQL</span><span class="skt">Redis</span>
+        <span class="skt">AWS</span><span class="skt">Git</span><span class="skt">Figma</span>
+        <span class="skt">Three.js</span><span class="skt">Framer Motion</span>
+        <span class="skt">Prisma</span><span class="skt">tRPC</span><span class="skt">Kubernetes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ EXPERIENCE ══════ -->
+  <section id="exp">
+    <span class="floater" style="top:5%;right:4%;--ft:10s;--fx:-22px;--fy:18px">📅</span>
+    <div class="ctr">
+      <div class="ex-hd">
+        <div class="badge rv"><i class="fas fa-briefcase"></i> سابقه کاری</div>
+        <h2 class="sh rv d1">مسیر <span>حرفه‌ای</span></h2>
+        <p class="ss rv d2">پروژه‌هایی که در طول زمان طراحی و توسعه دادم</p>
+      </div>
+      <div class="tl">
+        <div class="tl-line"></div>
+        <div class="ti rv l">
+          <div class="tc">
+            <div class="tp">2026 — اکنون</div>
+            <div class="tt">Foodomenu — منوی دیجیتال رستوران</div>
+            <div class="tco">foodomenu.ir</div>
+            <div class="tdesc">طراحی و توسعه سیستم منوی دیجیتال آنلاین برای رستوران‌ها با نمایش وب و دسترسی از طریق QR
+              Code.</div>
+          </div>
+          <div class="tdc">
+            <div class="td"></div>
+          </div>
+        </div>
+        <div class="ti rv r">
+          <div class="tdc">
+            <div class="td"></div>
+          </div>
+          <div class="tc">
+            <div class="tp">2025</div>
+            <div class="tt">Foodo — سیستم مدیریت رستوران</div>
+            <div class="tco">Electron Desktop App</div>
+            <div class="tdesc">طراحی و توسعه سیستم آفلاین مدیریت رستوران (منو، کاربران، سفارش‌ها، پنل ادمین) با
+              Electron، JavaScript، HTML، CSS و SQLite.</div>
+          </div>
+        </div>
+        <div class="ti rv l">
+          <div class="tc">
+            <div class="tp">2024</div>
+            <div class="tt">RustDesk.ir</div>
+            <div class="tco">rustdesk.ir</div>
+            <div class="tdesc">طراحی و توسعه وب‌سایت فارسی معرفی و آموزش نرم‌افزار RustDesk با HTML، CSS و JavaScript.
+            </div>
+          </div>
+          <div class="tdc">
+            <div class="td"></div>
+          </div>
+        </div>
+        <div class="ti rv r">
+          <div class="tdc">
+            <div class="td"></div>
+          </div>
+          <div class="tc">
+            <div class="tp">2024</div>
+            <div class="tt">اپ آب و هوا</div>
+            <div class="tco">React Weather App</div>
+            <div class="tdesc">توسعه اپلیکیشن نمایش آب و هوای زنده با React.js و دریافت داده از REST API.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ PORTFOLIO ══════ -->
+  <section id="portfolio">
+    <span class="floater" style="top:6%;left:4%;--ft:13s;--fx:18px;--fy:22px">🚀</span>
+    <div class="ctr">
+      <div class="pf-hd">
+        <div class="badge rv"><i class="fas fa-layer-group"></i> نمونه‌کارها</div>
+        <h2 class="sh rv d1">آخرین <span>پروژه‌ها</span></h2>
+      </div>
+      <div class="pf-fil rv">
+        <button class="fb on" data-f="all"><span>همه</span></button>
+        <button class="fb" data-f="web"><span>وب‌سایت</span></button>
+        <button class="fb" data-f="desktop"><span>دسکتاپ</span></button>
+      </div>
+      <div class="pfg">
+        <div class="pfc rv" data-c="web">
+          <div class="pfimg">
+            <div class="pfph">🍔</div>
+            <div class="pfov"><a href="https://foodomenu.ir" target="_blank" rel="noopener" class="bsm">مشاهده سایت</a>
+            </div>
+          </div>
+          <div class="pfb">
+            <div class="pftags"><span class="pft">HTML</span><span class="pft">CSS</span><span
+                class="pft">JavaScript</span></div>
+            <div class="pftitle">Foodomenu — منوی دیجیتال رستوران</div>
+            <div class="pfdesc">سیستم منوی دیجیتال آنلاین برای رستوران‌ها با نمایش وب و دسترسی سریع از طریق QR Code ·
+              2026</div>
+          </div>
+        </div>
+        <div class="pfc rv d1" data-c="desktop">
+          <div class="pfimg">
+            <div class="pfph">🧾</div>
+            <div class="pfov"><a href="ordex.html" class="bsm">اطلاعات بیشتر</a></div>
+          </div>
+          <div class="pfb">
+            <div class="pftags"><span class="pft">Electron</span><span class="pft">JavaScript</span><span
+                class="pft">SQLite</span></div>
+            <div class="pftitle">ordex — سیستم مدیریت رستوران</div>
+            <div class="pfdesc">سیستم آفلاین مدیریت رستوران (منو، کاربران، سفارش، پنل ادمین) —  بدون
+              نیاز به اینترنت · 2025</div>
+          </div>
+        </div>
+        <div class="pfc rv d2" data-c="web">
+          <div class="pfimg">
+            <div class="pfph">🖥️</div>
+            <div class="pfov"><a href="https://rustdesk.ir" target="_blank" rel="noopener" class="bsm">مشاهده سایت</a>
+            </div>
+          </div>
+          <div class="pfb">
+            <div class="pftags"><span class="pft">HTML</span><span class="pft">CSS</span><span
+                class="pft">JavaScript</span></div>
+            <div class="pftitle">RustDesk.ir</div>
+            <div class="pfdesc">وب‌سایت فارسی معرفی و آموزش نرم‌افزار دسکتاپ ریموت RustDesk · 2024</div>
+          </div>
+        </div>
+        <div class="pfc rv" data-c="web">
+          <div class="pfimg">
+            <div class="pfph">🌤️</div>
+            <div class="pfov"><a href="#" class="bsm">مشاهده پروژه</a></div>
+          </div>
+          <div class="pfb">
+            <div class="pftags"><span class="pft">React.js</span><span class="pft">REST API</span></div>
+            <div class="pftitle">اپ آب و هوا</div>
+            <div class="pfdesc">نمایش زنده وضعیت آب و هوا با دریافت داده از API · 2024</div>
+          </div>
+        </div>
+      </div>
+      <!-- scroll dots — فقط موبایل -->
+      <div class="pf-dots" id="pf-dots"></div>
+    </div>
+  </section>
+
+  <!-- ══════ SERVICES ══════ -->
+  <section id="services">
+    <span class="floater" style="top:6%;right:3%;--ft:10s;--fx:-18px;--fy:15px">🛠️</span>
+    <div class="ctr">
+      <div class="sv-hd">
+        <div class="badge rv"><i class="fas fa-cube"></i> خدمات</div>
+        <h2 class="sh rv d1">چه کاری <span>انجام میدم</span></h2>
+      </div>
+      <div class="svg">
+        <div class="svc rv">
+          <div class="svc-head" onclick="toggleSvc(this)">
+            <div class="svi">🎨</div>
+            <div class="svc-head-txt">
+              <div class="svn">توسعه فرانت‌اند</div>
+            </div>
+            <i class="fas fa-chevron-down svc-arrow"></i>
+          </div>
+          <div class="svd-desk">رابط کاربری سریع، واکنش‌گرا و زیبا با بهترین تجربه کاربری</div>
+          <ul class="svf svf-desk">
+            <li>React / Next.js</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>انیمیشن‌های پیشرفته</li>
+          </ul>
+          <div class="svc-body">
+            <div class="svc-body-desc">رابط کاربری سریع، واکنش‌گرا و زیبا با بهترین تجربه کاربری</div>
+            <ul class="svf">
+              <li>React / Next.js</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+              <li>انیمیشن‌های پیشرفته</li>
+            </ul>
+          </div>
+        </div>
+        <div class="svc feat rv d1">
+          <div class="svc-head" onclick="toggleSvc(this)">
+            <div class="svi">⚡</div>
+            <div class="svc-head-txt">
+              <div class="svn">Full-Stack Development</div>
+            </div>
+            <i class="fas fa-chevron-down svc-arrow"></i>
+          </div>
+          <div class="svd-desk">توسعه کامل اپلیکیشن از صفر تا اجرا — فرانت و بک‌اند یکجا</div>
+          <ul class="svf svf-desk">
+            <li>React + Node.js</li>
+            <li>API طراحی RESTful / GraphQL</li>
+            <li>دیتابیس و بهینه‌سازی</li>
+            <li>CI/CD و دیپلوی</li>
+          </ul>
+          <div class="svc-body">
+            <div class="svc-body-desc">توسعه کامل اپلیکیشن از صفر تا اجرا — فرانت و بک‌اند یکجا</div>
+            <ul class="svf">
+              <li>React + Node.js</li>
+              <li>API طراحی RESTful / GraphQL</li>
+              <li>دیتابیس و بهینه‌سازی</li>
+              <li>CI/CD و دیپلوی</li>
+            </ul>
+          </div>
+        </div>
+        <div class="svc rv d2">
+          <div class="svc-head" onclick="toggleSvc(this)">
+            <div class="svi">☁️</div>
+            <div class="svc-head-txt">
+              <div class="svn">بک‌اند و سرویس‌ها</div>
+            </div>
+            <i class="fas fa-chevron-down svc-arrow"></i>
+          </div>
+          <div class="svd-desk">APIهای سریع و مقیاس‌پذیر با امنیت بالا و مستندات کامل</div>
+          <ul class="svf svf-desk">
+            <li>Node.js / Python</li>
+            <li>Docker / Kubernetes</li>
+            <li>AWS / Vercel</li>
+            <li>مانیتورینگ</li>
+          </ul>
+          <div class="svc-body">
+            <div class="svc-body-desc">APIهای سریع و مقیاس‌پذیر با امنیت بالا و مستندات کامل</div>
+            <ul class="svf">
+              <li>Node.js / Python</li>
+              <li>Docker / Kubernetes</li>
+              <li>AWS / Vercel</li>
+              <li>مانیتورینگ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ TESTIMONIALS ══════ -->
+  <section id="testimonials">
+    <span class="floater" style="top:8%;right:4%;--ft:12s;--fx:-18px;--fy:14px">💬</span>
+    <div class="ctr">
+      <div style="text-align:center;margin-bottom:64px">
+        <div class="badge rv"><i class="fas fa-star"></i> نظرات مشتریان</div>
+        <h2 class="sh rv d1">چی درموردم <span>میگن</span></h2>
+        <p class="ss rv d2" style="margin:0 auto">مشتریانی که باهاشون همکاری کردم</p>
+      </div>
+      <div class="tm-grid">
+        <div class="tmc rv">
+          <div class="tmc-q">"</div>
+          <p class="tmc-txt">حمیدرضا یکی از بهترین توسعه‌دهنده‌هایی بود که باهاش کار کردم. پروژه رو سر وقت و با کیفیت
+            بالا تحویل داد. کدش تمیز، مستنداتش کامل و ارتباطش حرفه‌ای بود.</p>
+          <div class="tmc-foot">
+            <div class="tmc-av">AM</div>
+            <div>
+              <div class="tmc-name">علی محمدی</div>
+              <div class="tmc-role">مدیرعامل، TechVision Co.</div>
+            </div>
+            <div class="tmc-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="tmc rv d1">
+          <div class="tmc-q">"</div>
+          <p class="tmc-txt">فروشگاه آنلاینمون رو از صفر طراحی و راه‌اندازی کرد. طراحی UI خیلی حرفه‌ای بود و بک‌اندش هیچ
+            مشکلی نداشته. حتماً دوباره باهاش کار می‌کنم.</p>
+          <div class="tmc-foot">
+            <div class="tmc-av">SH</div>
+            <div>
+              <div class="tmc-name">سارا حسینی</div>
+              <div class="tmc-role">بنیان‌گذار، ShopDigital</div>
+            </div>
+            <div class="tmc-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="tmc rv d2">
+          <div class="tmc-q">"</div>
+          <p class="tmc-txt">داشبورد آنالیتیکس ما رو با Next.js و D3.js ساخت. پرفورمنس عالی، کد قابل نگهداری و همیشه در
+            دسترس برای رفع مشکلات. واقعاً Full-Stack واقعیه.</p>
+          <div class="tmc-foot">
+            <div class="tmc-av">RK</div>
+            <div>
+              <div class="tmc-name">رضا کریمی</div>
+              <div class="tmc-role">CTO، DataFlow Inc.</div>
+            </div>
+            <div class="tmc-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ CONTACT ══════ -->
+  <section id="contact">
+    <span class="floater" style="top:10%;left:3%;--ft:11s;--fx:22px;--fy:-18px">📨</span>
+    <div class="ctr">
+      <div style="text-align:center;margin-bottom:56px">
+        <div class="badge rv"><i class="fas fa-envelope"></i> تماس</div>
+        <h2 class="sh rv d1">بیا <span>همکاری</span> کنیم</h2>
+      </div>
+      <div class="ct-in">
+        <div class="rv">
+          <a class="ct-em" id="copy-em" href="mailto:info@hamidreza.dev">info@hamidreza.dev</a>
+          <div class="ct-links">
+            <a href="https://github.com" class="ctl" target="_blank"><i class="fab fa-github"></i><span
+                class="tip">GitHub</span></a>
+            <a href="https://linkedin.com" class="ctl" target="_blank"><i class="fab fa-linkedin-in"></i><span
+                class="tip">LinkedIn</span></a>
+            <a href="https://twitter.com" class="ctl" target="_blank"><i class="fab fa-twitter"></i><span
+                class="tip">Twitter</span></a>
+            <a href="https://wa.me/989300208711" class="ctl" target="_blank"><i class="fab fa-whatsapp"></i><span
+                class="tip">WhatsApp</span></a>
+            <a href="https://t.me/hamidreza" class="ctl" target="_blank"><i class="fab fa-telegram-plane"></i><span
+                class="tip">Telegram</span></a>
+          </div>
+          <p style="color:var(--tm);font-size:15px;line-height:1.9">
+            برای همکاری، مشاوره یا هر سوالی، فرم رو پر کن یا مستقیم باهام در ارتباط باش. معمولاً ظرف ۲۴ ساعت پاسخ میدم.
+          </p>
+        </div>
+        <div class="rv d1">
+          <form id="ctf" class="ctf" action="https://formspree.io/f/xrevwzgo" method="POST" novalidate>
+
+            <!-- 🍯 Honeypot -->
+            <div class="hp-field" aria-hidden="true">
+              <label>این فیلد رو خالی بذار</label>
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="fg">
+              <label for="f-name">نام و نام خانوادگی</label>
+              <input id="f-name" type="text" name="name" placeholder="حمید احمدی" required autocomplete="name" />
+            </div>
+            <div class="fg">
+              <label for="f-email">ایمیل</label>
+              <input id="f-email" type="email" name="email" placeholder="hamid@example.com" required
+                autocomplete="email" />
+            </div>
+            <div class="fg">
+              <label for="f-subj">موضوع</label>
+              <input id="f-subj" type="text" name="subject" placeholder="همکاری در پروژه" required />
+            </div>
+            <div class="fg">
+              <label for="f-msg">پیام</label>
+              <textarea id="f-msg" name="message" placeholder="پیامت رو بنویس..." required></textarea>
+            </div>
+
+            <div class="form-msg ok" id="msg-ok"><i class="fas fa-check-circle"></i> پیامت ارسال شد! به زودی پاسخ میدم.
+            </div>
+            <div class="form-msg err" id="msg-err"><i class="fas fa-exclamation-circle"></i> <span id="err-txt">مشکلی
+                پیش اومد. دوباره امتحان کن.</span></div>
+
+            <button type="submit" class="btsub" id="sub-btn">
+              <span id="sub-txt">ارسال پیام</span>
+              <i class="fas fa-paper-plane" id="sub-ico"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="mq-wrap">
+      <div class="mq-track">
+        <span>Full-Stack Developer</span> · React · Next.js · TypeScript · Node.js · PostgreSQL · Docker ·
+        <span>حمیدرضا محمدی</span> · Full-Stack Developer · React · Next.js · TypeScript · Node.js · PostgreSQL · Docker
+        ·
+        <span>حمیدرضا محمدی</span> · Full-Stack Developer · React · Next.js · TypeScript ·
+      </div>
+    </div>
+    <div class="ctr">
+      <div class="ft-bot">
+        <span class="ft-copy"> <span id="yr">2026</span> حمیدرضا محمدی — با ❤️ ساخته شده</span>
+        <a href="#hero" style="color:var(--tm);font-size:14px">بازگشت به بالا ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="btt" title="بازگشت به بالا">↑</button>
+
+  <!-- Three.js -->
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</body>
+
+</html>
