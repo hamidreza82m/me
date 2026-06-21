@@ -157,7 +157,7 @@ const barObs=new IntersectionObserver(es=>{
   es.forEach(e=>{
     if(e.isIntersecting){
       const b=e.target.querySelector('.skbar');
-      if(b) setTimeout(()=>b.style.width=b.dataset.w+'%',200);
+      if(b) setTimeout(()=>{ b.style.width=b.dataset.w+'%'; b.classList.add('filled'); },200);
       barObs.unobserve(e.target);
     }
   });
@@ -259,17 +259,20 @@ const tlObs=new IntersectionObserver(es=>{
 document.querySelectorAll('.ti').forEach(i=>tlObs.observe(i));
 
 /* ════════════════════════════════════════════
-   GLOW TILT on cards
+   GLOW TILT on cards (desktop only — on touch
+   this needs two taps and fights with the scroll-reveal transform)
 ════════════════════════════════════════════ */
-document.querySelectorAll('.skc,.svc,.tc').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-0.5;
-    const y=(e.clientY-r.top)/r.height-0.5;
-    card.style.transform=`perspective(900px) rotateY(${x*12}deg) rotateX(${-y*12}deg) translateY(-8px)`;
+if(window.matchMedia('(pointer:fine)').matches){
+  document.querySelectorAll('.skc,.svc,.tc').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-0.5;
+      const y=(e.clientY-r.top)/r.height-0.5;
+      card.style.transform=`perspective(900px) rotateY(${x*12}deg) rotateX(${-y*12}deg) translateY(-8px)`;
+    });
+    card.addEventListener('mouseleave',()=>card.style.transform='');
   });
-  card.addEventListener('mouseleave',()=>card.style.transform='');
-});
+}
 
 /* ════════════════════════════════════════════
    COPY EMAIL
@@ -427,12 +430,25 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 /* ════════════════════════════════════════════
    PARALLAX FLOATERS on scroll
 ════════════════════════════════════════════ */
-window.addEventListener('scroll',()=>{
-  const s=window.scrollY;
-  document.querySelectorAll('.floater').forEach((f,i)=>{
-    f.style.transform=`translateY(${s*(0.05*(i%3+1))}px)`;
-  });
-},{passive:true});
+(function(){
+  const floaters = [...document.querySelectorAll('.floater')];
+  if(!floaters.length) return;
+  let ticking = false;
+  function update(){
+    const s = window.scrollY;
+    floaters.forEach((f,i)=>{
+      f.style.transform = `translateY(${s*(0.05*(i%3+1))}px)`;
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', ()=>{
+    if(window.innerWidth <= 768) return; // floater ها روی موبایل مخفی‌ان، کاری لازم نیست
+    if(!ticking){
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }, {passive:true});
+})();
 
 /* ════════════════════════════════════════════
    THREE.JS — Interactive Torus Scene
@@ -501,8 +517,18 @@ window.addEventListener('scroll',()=>{
   },{passive:true});
 
   let fr=0;
+  let visible=true;
+  let rafId=null;
+
+  const visObs=new IntersectionObserver(es=>{
+    visible = es[0].isIntersecting;
+    if(visible && rafId===null) rafId=requestAnimationFrame(render);
+  },{threshold:0});
+  visObs.observe(canvas);
+
   function render(){
-    requestAnimationFrame(render);
+    if(!visible){ rafId=null; return; }
+    rafId=requestAnimationFrame(render);
     fr+=0.009;
 
     // Smooth mouse follow

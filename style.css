@@ -606,7 +606,14 @@ body.ch #cr {
 /* ═══════════════ LAYOUT HELPERS ═══════════════ */
 section {
     position: relative;
-    z-index: 1
+    z-index: 1;
+    scroll-margin-top: 84px
+}
+
+@media(max-width:768px) {
+    section {
+        scroll-margin-top: 70px
+    }
 }
 
 .ctr {
@@ -1183,7 +1190,13 @@ section {
     height: 10px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 12px var(--primary)
+    box-shadow: 0 0 12px var(--primary);
+    opacity: 0;
+    transition: opacity .4s var(--ease) 1s
+}
+
+.skbar.filled::after {
+    opacity: 1
 }
 
 .skpct {
@@ -2814,6 +2827,10 @@ footer {
         height: 44px;
         font-size: 16px
     }
+
+    #contact::after {
+        height: 60px;
+    }
 }
 
 @media(max-width:480px) {
@@ -2842,7 +2859,7 @@ footer {
     }
 
     .pfc {
-        min-width: 88vw
+        max-width: 92vw;
     }
 
     .tmc {
@@ -2872,5 +2889,30 @@ footer {
     *::after {
         animation-duration: .01ms !important;
         transition-duration: .01ms !important
+    }
+}
+
+/* ═══════════════ MOBILE: REVEAL ANIMS → VERTICAL ONLY ═══════════════ */
+/* روی موبایل حرکت افقی (چپ/راست) باعث overflow-x و بهم‌ریختگی قبل از اسکرول می‌شد.
+   اینجا همه‌چی رو به translateY (بالا/پایین) محدود می‌کنیم. */
+@media(max-width:900px) {
+
+    .rv.l,
+    .rv.r {
+        transform: translateY(46px)
+    }
+
+    .rv.l.vis,
+    .rv.r.vis {
+        transform: translateY(0)
+    }
+
+    .ti:nth-child(odd) .tc,
+    .ti:nth-child(even) .tc {
+        transform: translateY(32px)
+    }
+
+    .ti.vis .tc {
+        transform: translateY(0)
     }
 }
