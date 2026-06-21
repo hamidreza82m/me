@@ -1492,6 +1492,19 @@ section {
     position: relative
 }
 
+#ordex{
+    background: url(./img/img-ordex.png);
+    background-size: cover;
+}
+#foodomenu{
+    background: url(./img/foodomenu.png);
+    background-size: cover;
+}
+#rustdesk{
+    background: url(./img/rustdesk.png);
+    background-size: cover;
+}
+
 .pfimg img {
     width: 100%;
     height: 100%;
