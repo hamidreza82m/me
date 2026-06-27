@@ -246,6 +246,7 @@ fbs.forEach(btn=>{
       c.style.opacity=show?'1':'0';
       c.style.transform=show?'scale(1)':'scale(0.88)';
       c.style.pointerEvents=show?'':'none';
+      c.style.display=show?'block':'none';
     });
   });
 });
@@ -280,7 +281,7 @@ if(window.matchMedia('(pointer:fine)').matches){
 document.getElementById('copy-em').addEventListener('click',async function(e){
   e.preventDefault();
   try{
-    await navigator.clipboard.writeText('info@hamidreza.dev');
+    await navigator.clipboard.writeText('hamidreza82m@gmail.com');
     const orig=this.textContent;
     this.style.webkitTextFillColor=getComputedStyle(document.documentElement).getPropertyValue('--accent');
     this.textContent='✓ کپی شد!';
@@ -572,4 +573,4 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 
 /* console brand */
 console.log('%c🚀 حمیدرضا محمدی | Full-Stack Web Developer','color:#6366f1;font-size:16px;font-weight:bold');
-console.log('%cinfo@hamidreza.dev | 09300208711','color:#22d3ee;font-size:13px');
+console.log('%chamidreza2m@gamil.com | 09300208711','color:#22d3ee;font-size:13px');

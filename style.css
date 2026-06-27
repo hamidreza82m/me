@@ -54,7 +54,7 @@ canvas,
 }
 
 [data-theme=light] {
-    --bg: #f8fafc;
+    --bg: #eaf5ff;
     --surface: #fff;
     --surface2: #f1f5f9;
     --primary: #4f46e5;
@@ -1492,15 +1492,17 @@ section {
     position: relative
 }
 
-#ordex{
+#ordex {
     background: url(./img/img-ordex.png);
     background-size: cover;
 }
-#foodomenu{
+
+#foodomenu {
     background: url(./img/foodomenu.png);
     background-size: cover;
 }
-#rustdesk{
+
+#rustdesk {
     background: url(./img/rustdesk.png);
     background-size: cover;
 }
@@ -1651,8 +1653,8 @@ section {
 .svc.feat::before {
     content: 'پیشنهاد ویژه';
     position: absolute;
-    top: 16px;
-    left: 16px;
+    top: 10px;
+    left: 10px;
     padding: 4px 13px;
     background: var(--g1);
     border-radius: 99px;
@@ -1668,7 +1670,7 @@ section {
     inset: -2px;
     z-index: -1;
     border-radius: calc(var(--r) + 2px);
-    background: conic-gradient(from var(--ang), var(--primary), var(--glow), var(--accent), var(--primary));
+    background: conic-gradient(from var(--ang), #2327ff, #8300ff, #0095ff, #2327ff);
     animation: rotBorder 4s linear infinite;
 }
 
@@ -1725,6 +1727,11 @@ section {
     opacity: 0;
     transform: translateX(12px);
     transition: opacity .4s, transform .4s;
+}
+
+.feat .svf li {
+    color: #fff;
+
 }
 
 .svf li:last-child {
@@ -1816,9 +1823,7 @@ section {
     font-family: var(--fa)
 }
 
-.ct-em:hover::after {
-    opacity: 1
-}
+
 
 .ct-links {
     display: flex;
@@ -1926,6 +1931,7 @@ section {
     outline: none;
     resize: vertical;
     transition: border-color .3s, box-shadow .3s;
+    text-align: right;
 }
 
 .fg input:focus,
@@ -2102,12 +2108,13 @@ section {
 }
 
 .tmc-txt {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--td);
-    line-height: 1.85;
+    line-height: 1.65;
     margin-bottom: 24px;
     position: relative;
-    z-index: 1
+    z-index: 1;
+    text-align: center;
 }
 
 .tmc-foot {
@@ -2454,7 +2461,7 @@ footer {
 
     /* ── Section spacing ── */
     #hero {
-        padding: 90px 0 60px
+        padding: 58px 0 60px
     }
 
     #skills,
@@ -2750,12 +2757,12 @@ footer {
 
     /* Featured badge */
     .svc.feat::before {
-        top: 50%;
+        /* top: 50%; */
         transform: translateY(-50%);
         left: unset;
-        right: 56px;
+        right: 4px;
         font-size: 11px;
-        padding: 3px 9px
+        padding: 3px 9px;
     }
 
     /* ── Testimonials → horizontal scroll ── */
@@ -2803,7 +2810,7 @@ footer {
     }
 
     .ct-em::after {
-        opacity: 1;
+        /* opacity: 1; */
         font-size: 11px
     }
 
@@ -2846,6 +2853,12 @@ footer {
     }
 }
 
+@media (max-width:420px) {
+    .sind {
+        top: 730px;
+    }
+}
+
 @media(max-width:480px) {
     .ctr {
         padding: 0 16px
@@ -2876,7 +2889,8 @@ footer {
     }
 
     .tmc {
-        min-width: 88vw
+        min-width: 88vw;
+        width: 90%;
     }
 
     .hcta {
